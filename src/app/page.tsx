@@ -87,6 +87,180 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="p-5">
+        <div className="bg-[#F5F5F5] p-5 flex flex-col">
+          <p className="mt-6 font-bold text-center mb-4 text-xl">Máscara</p>
+          <div className="flex justify-center gap-5">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/required-mask.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Obrigatório</span>
+            </div>
+
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/recommended-mask.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Recomendado</span>
+            </div>
+          </div>
+
+          <p className="mt-6 font-bold text-center mb-4 text-xl">Toalha</p>
+          <div className="flex justify-center gap-5">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/required-towel.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Obrigatório</span>
+            </div>
+
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/recommended-towel.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Recomendado</span>
+            </div>
+          </div>
+
+          <p className="mt-6 font-bold text-center mb-4 text-xl">Bebedouro</p>
+          <div className="flex justify-center gap-5">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/partial-fountain.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Parcial</span>
+            </div>
+
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/forbidden-fountain.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Proibido</span>
+            </div>
+          </div>
+
+          <p className="mt-6 font-bold text-center mb-4 text-xl">Vestiários</p>
+          <div className="flex justify-center gap-5">
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/required-lockerroom.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Liberado</span>
+            </div>
+
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/partial-lockerroom.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Parcial</span>
+            </div>
+
+            <div className="flex flex-col gap-2 items-center justify-center">
+              <Image
+                src="/icones/forbidden-lockerroom.png"
+                alt="Máscara Obrigatória"
+                width={50}
+                height={50}
+              />
+              <span className="font-normal">Fechado</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#F5F5F5] shadow-md rounded-md mt-6 p-3">
+          <div className="border-b border-b-gray-300 pb-4">
+            <h3 className="text-green">Aberto</h3>
+
+            <h2 className="text-dark-gray">Vicente Linhares</h2>
+
+            <span>Rua Tibúrcio Cavalcante, 1885 - Meirele</span>
+            <p>Fortaleza, CE</p>
+          </div>
+
+          <div className="flex items-center justify-between px-5 gap-3 mt-5">
+            <Image
+              src="/icones/required-mask.png"
+              alt="Máscara Obrigatória"
+              width={50}
+              height={50}
+            />
+            <Image
+              src="/icones/required-towel.png"
+              alt="Máscara Obrigatória"
+              width={50}
+              height={50}
+            />
+            <Image
+              src="/icones/partial-fountain.png"
+              alt="Máscara Obrigatória"
+              width={50}
+              height={50}
+            />
+            <Image
+              src="/icones/forbidden-lockerroom.png"
+              alt="Máscara Obrigatória"
+              width={50}
+              height={50}
+            />
+          </div>
+
+          <div className="flex flex-col gap-5 p-5 items-start">
+            <div className="flex items-center gap-5">
+              <div className="flex-col">
+                <h3 className="font-bold">Seg. à Sex.</h3>
+                <span>06: ás 22h</span>
+              </div>
+
+              <div className="flex-col items-center gap-3">
+                <h3 className="font-bold">Sáb.</h3>
+                <span>09h às 18h</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col">
+              <h3 className="font-bold">Dom.</h3>
+              <p>Fechada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer className="bg-dark-gray w-full p-7 flex flex-col items-center justify-center">
+        <Image
+          src="/icones/logo.svg"
+          alt="Smartfit Logo"
+          width={120}
+          height={80}
+        />
+
+        <p className="text-white">Todos os direitos reservados - 2024</p>
+      </footer>
     </>
   )
 }
