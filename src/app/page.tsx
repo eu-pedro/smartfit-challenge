@@ -1,33 +1,25 @@
+'use client'
+
+import { Footer } from '@/_components/Footer'
+import { Header } from '@/_components/Header'
+import { Legend } from '@/_components/Legend'
 import Image from 'next/image'
+import { FormEvent } from 'react'
 
 export default function Home() {
+  function handleSubmitForm(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    console.log('oi')
+  }
+
   return (
     <>
-      <header className="p-5 w-full flex items-center justify-center bg-black">
-        <Image
-          src="/icones/logo.svg"
-          alt="Smartfit Logo"
-          width={120}
-          height={80}
-        />
-      </header>
-
+      <Header />
       <div className="p-5">
-        <h1 className="text-dark-gray mt-10 text-left uppercase">
-          Reabertura da Smart Fit
-        </h1>
-
-        <div className="w-[100px] h-3 bg-dark-gray mt-5" />
-
-        <p className="mt-5 text-justify">
-          O horário de funcionamento das nossas unidades está seguindo os
-          decretos de cada município. Por isso, confira aqui se a sua unidade
-          está aberta e as medidas de segurança que estamos seguindo.
-        </p>
-      </div>
-
-      <div className="p-5">
-        <div className="border-2 border-solid border-gray-500 p-5">
+        <form
+          onSubmit={handleSubmitForm}
+          className="border-2 border-solid border-gray-500 p-5"
+        >
           <div className="flex items-center gap-5">
             <Image
               src="/icones/icon-hour.png"
@@ -46,7 +38,7 @@ export default function Home() {
 
           <div className="flex justify-between py-4 border-b border-solid border-b-light-grey border-opacity-50">
             <div className="flex gap-3">
-              <input type="checkbox" />
+              <input type="checkbox" value={'06:00 às 12:00'} />
               <p className="text-light-grey">Manhã</p>
             </div>
             <p className="text-light-grey">06:00 às 12:00</p>
@@ -54,7 +46,7 @@ export default function Home() {
 
           <div className="flex justify-between py-4 border-b border-solid border-b-light-grey border-opacity-50">
             <div className="flex gap-3">
-              <input type="checkbox" />
+              <input type="checkbox" value={'12:01 às 18:00'} />
               <p className="text-light-grey">Tarde</p>
             </div>
             <p className="text-light-grey">12:01 às 18:00</p>
@@ -62,7 +54,7 @@ export default function Home() {
 
           <div className="flex justify-between py-4 border-b border-solid border-b-light-grey border-opacity-50">
             <div className="flex gap-3">
-              <input type="checkbox" />
+              <input type="checkbox" value={'18:01 às 23:00'} />
               <p className="text-light-grey">Noite</p>
             </div>
             <p className="text-light-grey">18:01 às 23:00</p>
@@ -78,120 +70,21 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col p-5 gap-5">
-            <button className="uppercase bg-yellow p-4 font-bold text-xl rounded-md">
+            <button
+              type="submit"
+              className="uppercase bg-yellow p-4 font-bold text-xl rounded-md"
+            >
               Encontrar Unidade
             </button>
             <button className="uppercase outline outline-2 outline-light-grey text-xl p-4 rounded-md font-bold">
               Limpar
             </button>
           </div>
-        </div>
+        </form>
       </div>
 
       <div className="p-5">
-        <div className="bg-[#F5F5F5] p-5 flex flex-col">
-          <p className="mt-6 font-bold text-center mb-4 text-xl">Máscara</p>
-          <div className="flex justify-center gap-5">
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/required-mask.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Obrigatório</span>
-            </div>
-
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/recommended-mask.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Recomendado</span>
-            </div>
-          </div>
-
-          <p className="mt-6 font-bold text-center mb-4 text-xl">Toalha</p>
-          <div className="flex justify-center gap-5">
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/required-towel.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Obrigatório</span>
-            </div>
-
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/recommended-towel.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Recomendado</span>
-            </div>
-          </div>
-
-          <p className="mt-6 font-bold text-center mb-4 text-xl">Bebedouro</p>
-          <div className="flex justify-center gap-5">
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/partial-fountain.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Parcial</span>
-            </div>
-
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/forbidden-fountain.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Proibido</span>
-            </div>
-          </div>
-
-          <p className="mt-6 font-bold text-center mb-4 text-xl">Vestiários</p>
-          <div className="flex justify-center gap-5">
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/required-lockerroom.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Liberado</span>
-            </div>
-
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/partial-lockerroom.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Parcial</span>
-            </div>
-
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <Image
-                src="/icones/forbidden-lockerroom.png"
-                alt="Máscara Obrigatória"
-                width={50}
-                height={50}
-              />
-              <span className="font-normal">Fechado</span>
-            </div>
-          </div>
-        </div>
+        <Legend />
 
         <div className="bg-[#F5F5F5] shadow-md rounded-md mt-6 p-3">
           <div className="border-b border-b-gray-300 pb-4">
@@ -251,16 +144,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="bg-dark-gray w-full p-7 flex flex-col items-center justify-center">
-        <Image
-          src="/icones/logo.svg"
-          alt="Smartfit Logo"
-          width={120}
-          height={80}
-        />
-
-        <p className="text-white">Todos os direitos reservados - 2024</p>
-      </footer>
+      <Footer />
     </>
   )
 }
